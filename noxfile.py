@@ -4,9 +4,10 @@
 import os
 import re
 import subprocess
+from contextlib import contextmanager
 from glob import glob
 from pathlib import Path
-from time import time
+from time import time, sleep
 
 import nox
 
@@ -30,9 +31,52 @@ def _install_this_project_with_flit(session, *, extras=None, editable=False):
     session.run("flit", "install", "--deps=production", *args, silent=True)
 
 
+@contextmanager
+def _background_process(session, cmd):
+    """Run 'cmd' from the session's virtualenv, in the background"""
+    env = {"PATH": os.pathsep.join([session.virtualenv.bin, os.environ["PATH"]])}
+
+    executable_name, *rest = cmd
+    executable = os.path.join(session.virtualenv.bin, executable_name)
+    command = [executable, *rest]
+
+    session.log(' '.join(cmd) + " &")
+    process = subprocess.Popen(command, env=env)
+    try:
+        sleep(0.5)  # just to let any "starting" output catch up.
+        yield
+    finally:
+        process.terminate()
+
+
 #
 # Development Sessions
 #
+@nox.session(python="3.8")
+def serve(session):
+    # Auto compile SCSS files, on change
+    # Auto generate documentation, on change, in src/ or docs/
+    _install_this_project_with_flit(session, extras=["doc"], editable=True)
+    session.install("sphinx-autobuild", "boussole")
+
+    boussle_args = ["--config", "src/materialism/scss/settings.json"]
+    session.run("boussole", "compile", *boussle_args)
+
+    with _background_process(session, ["boussole", "watch"] + boussle_args):
+        session.run(
+            "sphinx-autobuild",
+            "--port",
+            "0",
+            "--watch",
+            "src/",
+            "--open-browser",
+            "-a",
+            "-v",
+            "docs/",
+            "build/docs/",
+        )
+
+
 @nox.session(python="3.8")
 def docs(session):
     _install_this_project_with_flit(session, extras=["doc"])
