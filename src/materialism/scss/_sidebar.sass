@@ -1,0 +1,79 @@
+.sidebar
+  flex: 0 0 15rem
+  background: white
+  border-left: 1px solid lightgrey
+  border-right: 1px solid lightgrey
+
+.sidebar-content
+  padding: 1rem
+  font-size: 90%
+
+  // Lists!
+  ul
+    list-style-type: none
+    padding-left: 0.75rem
+  > ul
+    padding-left: 0
+  li
+    padding-top: 0.7rem
+    .current.reference
+      font-weight: bold
+
+  // Links!
+  a, a:visited
+    color: inherit
+    text-decoration: none
+
+  a:hover
+    // color: var(--secondary);
+    color: purple
+
+// Site Navigation
+.sidebar-left
+  position: fixed
+  top: 0
+  left: -15rem
+  width: 15rem
+  min-height: 100vh
+  transition: left 250ms
+
+  @include media-breakpoint-up(xl)
+    position: initial
+    top: initial
+    left: initial
+
+// Uses an off-canvas sidebar using a checkbox
+// with hamburger + overlay as "label"s for the corresponding checkbox
+.overlay
+  position: absolute
+  top: 0
+  left: 0
+  height: 0
+  width: 0
+  opacity: 0
+  transition: width 0ms, height 0ms, opacity 250ms
+  background-color: rgba(0,0,0,.54)
+
+// Changes to reveal-sidebar (restricted to small screens)
+@include media-breakpoint-down(xl)
+  #__drawer:checked ~ .sidebar-left
+    left: 0
+    z-index: 4
+
+  #__drawer:checked ~ .overlay
+    z-index: 3
+    width: 100%
+    height: 100%
+    opacity: 1
+
+// Table of Contents
+.sidebar-right
+  display: none
+
+  @include media-breakpoint-up(lg)
+    display: initial
+    order: 1
+
+// // Hide ".. contents" from documents
+// .content .contents
+//   display: none

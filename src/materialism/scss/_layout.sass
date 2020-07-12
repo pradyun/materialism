@@ -2,7 +2,9 @@ html
   height: 100%;
 
   // Hack borrowed from mkdocs-material
-  overflow-x: hidden;
+  overflow-x: hidden
+
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 
 body
   display: flex
@@ -10,18 +12,27 @@ body
   height: 100vh
 
 header
-  flex: 50px 0 0
+  flex: 3.125rem 0 0
+  display: flex
 
 .container
-  flex-grow: 1  // fill the vertical height
+  flex-grow: 1  // fill the vertical space
+  width: 100%  // fill the horizontal space
+  max-width: 75rem  // clamp the width (this is text!)
 
   display: flex
-  max-width: 75rem
   margin-left: auto
   margin-right: auto
 
-.sidebar
-  flex: 15rem 0 0
+.content
+  flex-grow: 1
+  flex-shrink: 0
+  max-width: 100%
 
-.sidebar-right
-  order: 1
+  // Make space for the sidebars
+  @include media-breakpoint-up(lg)
+    max-width: calc(100% - 15.1rem)
+  @include media-breakpoint-up(xl)
+    max-width: calc(100% - 15.1rem * 2)
+  article
+    padding: 1rem

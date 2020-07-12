@@ -2,3 +2,19 @@ header
   // TODO: shadow, border, nicer looking content.
   background-color: hsla(231, 48%, 48%, 1)
   color: white
+
+.hamburger
+  position: relative
+  margin: 16px  // TODO: do this properly
+
+  .icon i
+    position: relative
+    display: block
+    width: 18px
+    height: 2px
+    margin-bottom: 3px
+
+    background: white
+
+  @include media-breakpoint-up(xl)
+    display: none
