@@ -15,16 +15,16 @@
 
 ## 0.2.0
 
-- Work on docs/demo/paragraph
+- Better header
+- Better footer
 
 ## 0.3.0
 
-- Work on docs/demo/*
+- Work on docs/demo/paragraph
 
 ## 0.4.0
 
-- Better header
-- Better footer
+- Work on docs/demo/*
 
 ## 0.5.0
 
