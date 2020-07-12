@@ -1,0 +1,27 @@
+html
+  height: 100%;
+
+  // Hack borrowed from mkdocs-material
+  overflow-x: hidden;
+
+body
+  display: flex
+  flex-direction: column
+  height: 100vh
+
+header
+  flex: 50px 0 0
+
+.container
+  flex-grow: 1  // fill the vertical height
+
+  display: flex
+  max-width: 75rem
+  margin-left: auto
+  margin-right: auto
+
+.sidebar
+  flex: 15rem 0 0
+
+.sidebar-right
+  order: 1

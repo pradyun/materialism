@@ -1,0 +1,6 @@
+{%- if theme.colour and theme.color.background == "preference" -%}
+  <script>
+    if (matchMedia("(prefers-color-scheme: dark)").matches)
+      document.body.addClass("dark")
+  </script>
+{%- endif %}

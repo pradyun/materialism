@@ -1,0 +1,21 @@
+<!-- TODO: Navigation -->
+<div class="sidebar sidebar-left">
+  <div class="sidebar-scroll">
+    <div class="sidebar-content">
+      {% set global_toc = toctree(maxdepth=2, collapse=true, includehidden=false) %}
+      {{ global_toc }}
+    </div>
+  </div>
+</div>
+<div class="sidebar sidebar-right">
+  <div class="sidebar-scroll">
+    <div class="sidebar-content">
+      {{ toc }}
+    </div>
+  </div>
+</div>
+{% block content %}
+<main class="content">
+  <article>{{ body }}</article>
+</main>
+{% endblock %}

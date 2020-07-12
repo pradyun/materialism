@@ -20,3 +20,6 @@ doc = ["sphinx"]
 
 [tool.flit.entrypoints]
 "sphinx.html_themes" = {materialism = "materialism"}
+
+[tool.flit.sdist]
+exclude = ["src/materialism/scss"]

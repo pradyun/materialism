@@ -1,0 +1,10 @@
+{% if announce %}
+<!-- TODO: make this a real thing -->
+<div class="announce-container">
+  <aside class="announce">
+    <div class="announce__inner">
+      {% block announcement %}{{ announce }}{% endblock %}
+    </div>
+  </aside>
+</div>
+{% endif %}
