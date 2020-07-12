@@ -9,6 +9,7 @@
   - Content
   - Page Navigation (with affix + scrollspy)
 - Responsive collapsing!
+- Sticky header element
 
 - Vanilla CSS affix: https://codepen.io/ncerminara/pen/eKNROb
 - Vanilla JS scrollspy: https://codepen.io/zchee/pen/ogzvZZ
