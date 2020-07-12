@@ -1,4 +1,4 @@
-"""A Material Design theme for Sphinx (based on mkdocs-material)."""
+"""A Material Design theme for Sphinx (inspired by mkdocs-material)."""
 
 __version__ = "0.0.2.dev0"
 
