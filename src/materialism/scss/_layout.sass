@@ -4,15 +4,20 @@ html
   // Hack borrowed from mkdocs-material
   overflow-x: hidden
 
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+  font-family: "Roboto", sans-serif
 
 body
-  display: flex
-  flex-direction: column
-  height: 100vh
+  margin: 0
+  padding: 0
 
 header
-  flex: 3.125rem 0 0
+  z-index: 1
+
+  position: sticky
+  top: 0
+  width: 100vw
+  height: 3.125rem
+
   display: flex
 
 .container
@@ -34,5 +39,9 @@ header
     max-width: calc(100% - 15.1rem)
   @include media-breakpoint-up(xl)
     max-width: calc(100% - 15.1rem * 2)
+
   article
     padding: 1rem
+    *:target
+      scroll-margin-top: 3.125rem + .5rem
+
