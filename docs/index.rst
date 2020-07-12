@@ -14,7 +14,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum sapiente tenetur ni
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Contents
 
    demo/index
    more
