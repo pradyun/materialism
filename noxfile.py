@@ -15,6 +15,9 @@ nox.options.sessions = ["lint", "test"]
 nox.options.reuse_existing_virtualenvs = True
 
 
+#
+# Helpers
+#
 def _install_this_project_with_flit(session, *, extras=None, editable=False):
     session.install("flit")
     args = []
@@ -27,6 +30,9 @@ def _install_this_project_with_flit(session, *, extras=None, editable=False):
     session.run("flit", "install", "--deps=production", *args, silent=True)
 
 
+#
+# Development Sessions
+#
 @nox.session(python="3.8")
 def docs(session):
     _install_this_project_with_flit(session, extras=["doc"])
@@ -55,6 +61,9 @@ def test(session):
     session.run("pytest", *args)
 
 
+#
+# Helpers (Release Automation)
+#
 def get_version_from_arguments(arguments):
     """Checks the arguments passed to `nox -s release`.
 
@@ -122,6 +131,9 @@ def bump(session, *, version, file, kind):
     subprocess.run(["git", "commit", "-m", f"Bump for {kind}"])
 
 
+#
+# Release Automation
+#
 @nox.session
 def release(session):
     release_version = get_version_from_arguments(session.posargs)
