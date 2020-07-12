@@ -38,7 +38,7 @@ def docs(session):
     _install_this_project_with_flit(session, extras=["doc"])
 
     # Generate documentation into `build/docs`
-    session.run("sphinx-build", "-W", "-b", "html", "docs/", "build/docs")
+    session.run("sphinx-build", "-W", "-b", "html", "-v", "docs/", "build/docs")
 
 
 @nox.session(python="3.8")
