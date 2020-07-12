@@ -71,7 +71,7 @@ def serve(session):
             "src/",
             "--open-browser",
             "-a",
-            "-v",
+            "-q",
             "docs/",
             "build/docs/",
         )
