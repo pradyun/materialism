@@ -10,7 +10,6 @@
 Paragraph Level Markup
 **********************
 
-.. contents:: Table of Contents
 
 Inline Markup
 =============
@@ -78,7 +77,7 @@ Meta
    :description lang=en: A demonstration of the reStructuredText
        markup language, containing examples of all basic
        constructs and many advanced constructs.
-       
+
 Blocks
 ======
 
@@ -282,7 +281,7 @@ Glossary
 This is a glossary with definition terms for thing like :term:`Writing`:
 
 .. glossary::
-  
+
   Documentation
      Provides users with the knowledge they need to use something.
 
