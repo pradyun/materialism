@@ -58,7 +58,6 @@ Suspendisse potenti. Curabitur tristique sit amet lectus non viverra. Phasellus 
 Mauris maximus viverra ante. Donec eu egestas mauris. Morbi vulputate tincidunt euismod. Integer vel porttitor neque.
 Donec at lacus suscipit, lacinia lectus vel, sagittis lectus.
 
-*********************
 Structural Elements 2
 *********************
 

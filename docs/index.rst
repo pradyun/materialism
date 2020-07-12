@@ -14,7 +14,11 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum sapiente tenetur ni
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents
 
-   demo/index
+   Home <index>
+   api
+   demo
+   lists_tables
+   long
+   structure
    more
