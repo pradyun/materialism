@@ -17,6 +17,7 @@
 ## 0.2.0
 
 - Better header
+  - actually provide a way to get there from top-bar "search" field
 - Better footer
 
 ## 0.3.0
@@ -35,6 +36,11 @@
 ## 0.6.0
 
 - Pay down debt.
+- Polish Design!
+
+## 0.7.0
+
+- Work on mobile support for Table-of-Contents sidebar.
 
 ## 0.8.0
 
