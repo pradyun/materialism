@@ -1,13 +1,12 @@
 """Development automation
 """
-
 import os
 import re
 import subprocess
 from contextlib import contextmanager
 from glob import glob
 from pathlib import Path
-from time import time, sleep
+from time import sleep, time
 
 import nox
 
@@ -40,7 +39,7 @@ def _background_process(session, cmd):
     executable = os.path.join(session.virtualenv.bin, executable_name)
     command = [executable, *rest]
 
-    session.log(' '.join(cmd) + " &")
+    session.log(" ".join(cmd) + " &")
     process = subprocess.Popen(command, env=env)
     try:
         sleep(0.5)  # just to let any "starting" output catch up.
