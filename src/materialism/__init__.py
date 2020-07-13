@@ -1,6 +1,6 @@
 """A Material Design theme for Sphinx (inspired by mkdocs-material)."""
 
-__version__ = "0.0.2.dev0"
+__version__ = "0.1.0"
 
 from os import path
 
