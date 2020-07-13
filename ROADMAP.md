@@ -16,6 +16,7 @@
 
 ## 0.2.0
 
+- Add JS and make sidebars nicer
 - Better header
   - actually provide a way to get there from top-bar "search" field
 - Better footer
