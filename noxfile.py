@@ -194,7 +194,15 @@ def release(session):
     bump(session, version=release_version, file=version_file, kind="release")
 
     # Tag the release commit
-    session.run("git", "tag", "-s", release_version, external=True)
+    session.run(
+        "git",
+        "tag",
+        "-s",
+        "-m",
+        f"Release {release_version}",
+        release_version,
+        external=True,
+    )
 
     # Bump for development
     major, minor, patch = map(int, release_version.split("."))
