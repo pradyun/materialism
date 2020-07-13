@@ -10,25 +10,19 @@
 
 .sidebar-content
   padding: 1rem
-  font-size: 90%
+  font-size: .85rem
 
   // Lists!
   ul
     list-style-type: none
     padding-left: 0.75rem
-  > ul
-    padding-left: 0
-    // Hide the "top level" in the right sidebar.
-    .sidebar-right & > li
-      padding-top: 0
-      & > ul
-        padding-left: 0
-      & > a
-        display: none
   li
     padding-top: 0.7rem
     .current.reference
       font-weight: bold
+  // First level shouldn't be indented.
+  > ul
+    padding-left: 0
 
   // Links!
   a, a:visited
@@ -42,7 +36,9 @@
 .caption
   font-weight: bold
 
+//
 // Site Navigation
+//
 .sidebar-left
   position: fixed
   top: 0
@@ -80,9 +76,24 @@
     height: 100%
     opacity: 1
 
+//
 // Table of Contents
+//
 .sidebar-right
   display: none
+
+  // Hide the "top level" in the right sidebar.
+  .sidebar-content > ul > li
+    padding-top: 0
+    & > ul
+      padding-left: 0
+    & > a
+      display: none
+
+  .scroll-past > a
+    opacity: 0.5
+  .scroll-current > a
+    color: hsla(231, 48%, 48%, 1)
 
   @include media-breakpoint-up(lg)
     display: initial
