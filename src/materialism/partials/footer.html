@@ -1,6 +1,39 @@
 <footer>
+  <div class="footer-nav">
+    <nav class="container">
+      {% if prev %}
+      <a class="clean-link footer-prev" href="{{ prev.link }}">
+        <div class="footer-caption">Previous</div>
+        <div class="footer-title">
+          {%- if prev.link == pathto(master_doc) -%}
+            Home
+          {%- else -%}
+            {{ prev.title }}
+          {%- endif -%}
+        </div>
+      </a>
+      {% endif %}
+      {% if next %}
+        <a class="clean-link footer-next" href="{{ next.link }}">
+          <div class="footer-caption">Next</div>
+          <div class="footer-title">{{ next.title }}</div>
+        </a>
+      {% endif %}
+    </nav>
+  </div>
+  <div class="footer-info">
+    <div class="container">
+      <div class="footer-meta">
+        <div class="copyright highlight">Copyright &copy; {{ copyright }}</div>
+        Made with <a class="clean-link" href="https://github.com/pradyunsg/materialism">Materialism</a>
+        theme for <a class="clean-link" href="https://sphinx-doc.org/">Sphinx</a>.
+      </div>
+      <div class="footer-icons">
+        {% block footer_icons %}
+        {% endblock %}
+      </div>
+    </div>
+  </div>
   <!-- TODO: Present Next and Prev here, in a nice way -->
-  <!-- TODO: Credit to this theme -->
   <!-- TODO: Socials/Icons (on the right) -->
-  <div class="copyright">Copyright &copy; {{ copyright }}</div>
 </footer>
