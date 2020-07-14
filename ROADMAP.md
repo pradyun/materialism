@@ -18,11 +18,12 @@
 
 - Add JS and make sidebars nicer
 - Better header
-  - actually provide a way to get there from top-bar "search" field
 - Better footer
 
 ## 0.3.0
 
+- Sidebar: scroll-height adjusting
+- Left Sidebar: collapsing elements!
 - Work on docs/demo/paragraph
 
 ## 0.4.0
@@ -31,7 +32,7 @@
 
 ## 0.5.0
 
-- Better search page
+- Better search page + in header
 - top-of-page announcements
 
 ## 0.6.0
