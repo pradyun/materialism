@@ -9,12 +9,13 @@
   top: 3.125rem  // TODO: same-source-of-truth as header's height
 
 .sidebar-content
-  padding: 1rem
+  padding: 1rem 0.5rem
   font-size: .85rem
 
   // Lists!
   ul
     list-style-type: none
+    margin-top: 0
     padding-left: 0.75rem
   li
     padding-top: 0.7rem
@@ -34,6 +35,8 @@
     color: purple
 
 .caption
+  margin-top: 0.7rem
+  margin-bottom: 0
   font-weight: bold
 
 //
@@ -47,7 +50,7 @@
   min-height: 100vh
   transition: left 250ms
 
-  @include media-breakpoint-up(xl)
+  @include media-breakpoint-up(large)
     position: initial
     top: initial
     left: initial
@@ -55,7 +58,7 @@
 // Uses an off-canvas sidebar using a checkbox
 // with hamburger + overlay as "label"s for the corresponding checkbox
 .overlay
-  position: absolute
+  position: fixed
   top: 0
   left: 0
   height: 0
@@ -64,8 +67,8 @@
   transition: width 0ms, height 0ms, opacity 250ms
   background-color: rgba(0,0,0,.54)
 
-// Changes to reveal-sidebar (restricted to small screens)
-@include media-breakpoint-down(xl)
+// Changes to reveal-sidebar (restricted to not-desktop sizes)
+@include media-breakpoint-down(large)
   #__drawer:checked ~ .sidebar-left
     left: 0
     z-index: 4
@@ -95,7 +98,7 @@
   .scroll-current > a
     color: hsla(231, 48%, 48%, 1)
 
-  @include media-breakpoint-up(lg)
+  @include media-breakpoint-up(medium)
     display: initial
     order: 1
 

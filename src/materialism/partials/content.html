@@ -6,7 +6,7 @@
 <div class="sidebar sidebar-left">
   <div class="sidebar-scroll">
     <div class="sidebar-content">
-      {% set global_toc = toctree(maxdepth=1, collapse=true, includehidden=false) %}
+      {% set global_toc = toctree(collapse=false, includehidden=false, titles_only=true) %}
       {{ global_toc }}
     </div>
   </div>
