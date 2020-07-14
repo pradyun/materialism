@@ -1,19 +1,34 @@
 <header>
-  <!-- TODO: Logo -->
-  <!-- TODO: Make this fade away to h1-content, like mkdocs-material -->
-  <!-- TODO: Provide a way to get to "search"? -->
-  <!-- TODO: Tabs? -->
-  <!-- TODO: RHS repo/page/RTD information? -->
-  <div class="hamburger">
-    <label for="__drawer">
-      <div class="icon">
-        <i></i>
-        <i></i>
-        <i></i>
-      </div>
-    </label>
-  </div>
+<div class="container">
 
-  <div class="logo"></div>
-  <div class="name">{{ docstitle }}</div>
+{# Left hand side #}
+<div class="header-primary">
+  {% if logo %}
+  <a class="header-logo clean-link" href="{{ pathto(master_doc) }}">
+    <img src="{{ pathto('_static/' + logo, 1) }}" alt="Logo"/>
+  </a>
+  {% endif %}
+  <label class="hamburger" for="__drawer">
+    <i></i><i></i><i></i>
+  </label>
+  <div class="header-title">
+      <div class="header-overall-title">
+        <a class="clean-link" href="{{ pathto(master_doc) }}">
+          {{ docstitle }}
+        </a>
+        </div>
+      <div class="header-page-title">{{ title }}</div>
+  </div>
+</div>
+
+{# Right hand side #}
+<div class="header-secondary">
+  <a class="clean-link" href="{{ pathto('search') }}">Search</a>
+</div>
+
+<!-- TODO: Make this fade away to h1-content, like mkdocs-material -->
+<!-- TODO: Tabs? -->
+<!-- TODO: RHS repo/page/RTD information? -->
+
+</div>
 </header>

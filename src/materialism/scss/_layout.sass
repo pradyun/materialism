@@ -1,12 +1,19 @@
 html
   height: 100%;
 
-  // Hack borrowed from mkdocs-material
-  overflow-x: hidden
-
+  scroll-behavior: smooth
   font-family: "Roboto", sans-serif
 
-  scroll-behavior: smooth
+  // Borrowed from mkdocs-material
+  font-size: 100%
+
+  // Make things bigger on bigger screens
+  @include media-breakpoint-up(larger)
+    font-size: 110%
+  @include media-breakpoint-up(largest)
+    font-size: 137.50%
+
+  overflow-x: hidden
 
 body
   margin: 0
@@ -18,9 +25,9 @@ header
   position: sticky
   top: 0
   width: 100vw
-  height: 3.125rem
 
-  display: flex
+main
+  padding-top: 1.5rem
 
 .container
   flex-grow: 1  // fill the vertical space
@@ -37,9 +44,9 @@ header
   max-width: 100%
 
   // Make space for the sidebars
-  @include media-breakpoint-up(lg)
+  @include media-breakpoint-up(medium)
     max-width: calc(100% - 15.1rem)
-  @include media-breakpoint-up(xl)
+  @include media-breakpoint-up(large)
     max-width: calc(100% - 15.1rem * 2)
 
   article

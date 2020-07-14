@@ -11,11 +11,11 @@
     {%- include "!partials/body-prefix.html" -%}
     {%- include "!partials/announce.html" -%}
     {%- include "!partials/header.html" -%}
-    <div class="container">
+    <main class="container">
       {% block content %}
       {%- include "!partials/content.html" with context -%}
       {% endblock %}
-    </div>
+    </main>
     {%- include "!partials/footer.html" -%}
     {%- include "!partials/body-suffix.html" -%}
     {%- endblock -%}
