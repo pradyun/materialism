@@ -49,3 +49,6 @@ html_theme = "materialism"
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ["static"]
+
+html_title = "Materialism for Sphinx"
+html_logo = "static/logo.svg"
