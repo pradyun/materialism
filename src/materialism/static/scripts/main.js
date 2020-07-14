@@ -32,7 +32,7 @@ function setup() {
 
   // Sidebars can scroll now!
   for (sidebar of sidebars) {
-    sidebar.style.overflowY = "scroll";
+    sidebar.style.overflowY = "auto";
   }
 }
 
