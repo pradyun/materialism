@@ -48,11 +48,11 @@
 <link rel="stylesheet" href="{{ pathto('_static/stylesheets/main.css', 1) }}">
 
 {# Extra color palette #}
-{%- if theme.colour -%}
-  <link rel="stylesheet" href="{{ pathto('_static/stylesheets/colour.css', 1) }}">
+{%- if theme.color -%}
+  <link rel="stylesheet" href="{{ pathto('_static/stylesheets/color.css', 1) }}">
   {# Theme-color meta tag for Android #}
-  {%- if theme.colour.primary -%}
-    <meta name="theme-color" content="{{ theme.colour.primary }}" />
+  {%- if theme.color.primary -%}
+    <meta name="theme-color" content="{{ theme.color.primary }}" />
   {%- endif -%}
 {%- endif -%}
 {%- endblock -%}
