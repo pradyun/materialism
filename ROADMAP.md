@@ -18,13 +18,13 @@
 
 - Add JS and make sidebars nicer
 - Better header
-- Better footer
+- Work on docs/demo/paragraph
 
 ## 0.3.0
 
 - Sidebar: scroll-height adjusting
 - Left Sidebar: collapsing elements!
-- Work on docs/demo/paragraph
+- Better footer
 
 ## 0.4.0
 
