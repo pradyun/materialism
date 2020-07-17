@@ -1,6 +1,13 @@
+// TODO: complete this
+
 footer
+  color: var(--footer-fg-color)
+  background-color: var(--footer-bg-color)
+
   a[href]
-    color: white
+    color: var(--footer-fg-color--light)
+    &:hover
+      color: var(--footer-fg-color)
 
   .container
     flex-direction: row
@@ -10,25 +17,20 @@ footer
 
 // Upper: Navigation
 .footer-nav
-  background-color: rgba(0, 0, 0, 0.87)
-  height: 6rem
-
-// TODO: complete this
+  padding: 1rem
 
 // Lower: Information!
 .footer-info
-  font-size: 0.75rem
+  padding: 1rem
+
+  background-color: var(--footer-bg-color--dark)
+
+  font-size: 0.8rem
   line-height: 1.3rem
 
-  background-color: black
-  height: 4rem
 
 .footer-meta
-  color: grey
+  color: var(--footer-fg-color--lighter)
 
   .highlight
-    color: white
-
-// This part, is for customization :)
-.footer-icons
-  color: white
+    color: var(--footer-fg-color--light)
