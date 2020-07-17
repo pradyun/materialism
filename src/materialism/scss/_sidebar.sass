@@ -47,8 +47,11 @@
   top: 0
   left: -15rem
   width: 15rem
-  min-height: 100vh
   transition: left 250ms
+
+  @include media-breakpoint-down(large)
+    min-height: 100vh
+    z-index: 4
 
   @include media-breakpoint-up(large)
     position: initial
