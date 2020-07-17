@@ -1,0 +1,105 @@
+@import "theme_colors"
+
+// Borrows elements from
+// https://github.com/squidfunk/mkdocs-material/tree/master/src/assets/stylesheets/palette
+//
+// Unlike mkdocs-material:
+// - I don't wanna support "white" and "black" themes, they're not very interesting.
+// - I don't wanna have a separate css file for additional colors.
+
+//
+// Dark Mode
+//
+[data-background="dark"]
+  // Default color shades
+  --fg-color:               hsla(0, 0%, 100%, 1)
+  --fg-color--light:        hsla(0, 0%, 100%, 0.87)
+  --fg-color--lighter:      hsla(0, 0%, 100%, 0.32)
+  --fg-color--lightest:     hsla(0, 0%, 100%, 0.12)
+  --bg-color:               hsla(232, 15%, 21%, 1)
+  --bg-color--light:        hsla(232, 15%, 21%, 0.54)
+  --bg-color--lighter:      hsla(232, 15%, 21%, 0.26)
+  --bg-color--lightest:     hsla(232, 15%, 21%, 0.07)
+
+  // Code color shades
+  --code-bg-color:          hsla(232, 15%, 18%, 1)
+  --code-fg-color:          hsla(60, 30%, 96%, 1)
+
+  // Text color shades
+  --text-color:             var(--fg-color--light)
+  --text-link-color:        var(--primary-fg-color)
+
+  // Admonition color shades
+  --admonition-bg-color:    hsla(0, 0%, 100%, 0.025)
+  --admonition-fg-color:    var(--fg-color)
+
+  // Footer color shades
+  --footer-bg-color:        hsla(232, 15%, 12%, 0.87)
+  --footer-bg-color--dark:  hsla(232, 15%, 10%, 1)
+
+//
+// Dark Mode
+//
+[data-background="light"]
+  // Default color shades
+  --fg-color:               hsla(0, 0%, 0%, 0.87);
+  --fg-color--light:        hsla(0, 0%, 0%, 0.54);
+  --fg-color--lighter:      hsla(0, 0%, 0%, 0.32);
+  --fg-color--lightest:     hsla(0, 0%, 0%, 0.07);
+  --bg-color:               hsla(0, 0%, 100%, 1);
+  --bg-color--light:        hsla(0, 0%, 100%, 0.7);
+  --bg-color--lighter:      hsla(0, 0%, 100%, 0.3);
+  --bg-color--lightest:     hsla(0, 0%, 100%, 0.12);
+
+  // Code color shades
+  --code-bg-color:                  hsla(0, 0%, 96%, 1);
+  --code-fg-color:                  hsla(200, 18%, 26%, 1);
+
+  // Text color shades
+  --text-color:                     var(--fg-color);
+  --text-link-color:                var(--primary-fg-color);
+
+  // Admonition color shades
+  --admonition-bg-color:            var(--bg-color);
+  --admonition-fg-color:            var(--fg-color);
+
+  // Footer color shades
+  --footer-bg-color:                hsla(0, 0%, 0%, 0.87);
+  --footer-bg-color--dark:          hsla(0, 0%, 0%, 0.32);
+  --footer-fg-color:                hsla(0, 0%, 100%, 1);
+  --footer-fg-color--light:         hsla(0, 0%, 100%, 0.7);
+  --footer-fg-color--lighter:       hsla(0, 0%, 100%, 0.3);
+
+//
+// Accent colors
+//
+@each $name, $array in $theme-colors
+  $base-color:   color($name, nth($array, 1))
+  $light-color:  color($name, nth($array, 2))
+  $dark-color:   color($name, nth($array, 3))
+  $accent-color: color($name, nth($array, 4))
+  $text-style:                nth($array, 5)
+
+  [data-primary="#{$name}"]
+    --primary-fg:             hsla(#{hex2hsl($base-color)}, 1)
+    --primary-fg--light:      hsla(#{hex2hsl($light-color)}, 1)
+    --primary-fg--dark:       hsla(#{hex2hsl($dark-color)}, 1)
+
+    @if $text-style == "dark"
+      --primary-bg:           hsla(0, 0%, 0%, 0.87)
+      --primary-bg--light:    hsla(0, 0%, 0%, 0.54)
+    @else
+      --primary-bg:           hsla(0, 0%, 100%, 1)
+      --primary-bg--light:    hsla(0, 0%, 100%, 0.7)
+
+  @if $accent-color != null
+    [data-accent="#{$name}"]
+      --accent-fg:              hsla(#{hex2hsl($accent-color)}, 1)
+      --accent-fg--transparent: hsla(#{hex2hsl($accent-color)}, 0.1)
+
+      @if $text-style == "dark"
+        --accent-bg:           hsla(0, 0%, 0%, 0.87)
+        --accent-bg--light:    hsla(0, 0%, 0%, 0.54)
+      @else
+        --accent-bg:           hsla(0, 0%, 100%, 1)
+        --accent-bg--light:    hsla(0, 0%, 100%, 0.7)

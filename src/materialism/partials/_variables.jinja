@@ -1,12 +1,15 @@
 {# colors
 
-  primary: material color name or hex
-  secondary: material color name or hex
+  primary: material color name
+  accent: material color name
   background: "light", "dark", "preference"
-  include_css: boolean
 
 #}
-{% set color = none %}
+{% set color = {
+  "primary": "indigo",
+  "accent": "indigo",
+  "background": "light",
+} %}
 
 {# Fonts
 

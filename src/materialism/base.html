@@ -6,7 +6,16 @@
   <head>
     {%- include "!partials/_head.html" -%}
   </head>
-  <body dir="{{ direction }}">
+<body dir="{{ direction }}" {% if theme.color -%}
+    data-primary="{{ theme.color.primary }}"
+    data-accent="{{ theme.color.accent }}"
+    {% if theme.color.background == "preference" -%}
+      data-background="light"
+    {%- else -%}
+      data-background="{{ theme.color.background }}"
+    {%- endif -%}
+  {%- endif -%}
+>
     {% block body -%}
     {%- include "!partials/body-prefix.html" -%}
     {%- include "!partials/announce.html" -%}
